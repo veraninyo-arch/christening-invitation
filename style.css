@@ -803,9 +803,9 @@ main{
 
     display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(90px,1fr));
 
-    gap:12px;
+    gap:16px;
 
 }
 
@@ -847,7 +847,7 @@ main{
 
     font-family:'Poppins',sans-serif;
 
-    font-size:72px;
+    font-size:clamp(48px, 10vw, 72px);
 
     font-weight:700;
 
