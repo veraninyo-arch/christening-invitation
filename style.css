@@ -805,7 +805,7 @@ main{
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:40px;
+    gap:12px;
 
 }
 
@@ -1236,6 +1236,20 @@ main{
 }
 
 @media(min-width:768px){
+
+    .countdown-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:12px;
+}
+
+.countdown-item h3{
+    font-size:3rem;
+}
+
+.countdown-item span{
+    font-size:.8rem;
+}
 
     .dress-grid{
 
