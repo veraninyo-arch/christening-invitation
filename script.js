@@ -144,8 +144,16 @@ if (welcomeGate && envelope) {
 
     envelope.addEventListener("click", () => {
 
+    envelope.style.transform = "scale(0.96)";
+
+    envelope.style.transition = "transform .25s ease";
+
+    setTimeout(() => {
+
         welcomeGate.classList.add("hide");
 
-    });
+    }, 220);
+
+});
 
 }
