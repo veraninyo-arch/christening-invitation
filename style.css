@@ -1286,113 +1286,73 @@ main{
 
     z-index:99999;
 
-    transition:opacity .8s ease,
-               visibility .8s ease;
+    transition:
+    opacity .8s ease,
+    visibility .8s ease,
+    transform .8s ease;
 
 }
 
-.welcome-card{
-
-    width:min(90%,420px);
-
-    text-align:center;
-
-    padding:42px 28px;
-
-    background:#ffffff;
-
-    border-radius:30px;
-
-    box-shadow:0 20px 60px rgba(0,0,0,.08);
-
+.welcome-content{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
 }
 
-.welcome-photo{
-
-    width:160px;
-
-    height:160px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:8px solid white;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.12);
-
-    margin-bottom:24px;
-
-}
-
-.welcome-label{
-
-    letter-spacing:6px;
-
-    font-size:13px;
-
-    font-weight:600;
-
-    color:#7aaed8;
-
-    margin-bottom:18px;
-
-}
-
-.welcome-title{
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-size:52px;
-
-    color:#23435f;
-
-    line-height:1.05;
-
-    margin-bottom:20px;
-
-}
-
-.welcome-text{
-
-    font-size:17px;
-
-    color:#666;
-
-    line-height:1.8;
-
-    margin-bottom:34px;
-
-}
-
-.welcome-button{
-
-    background:#8fc2f0;
-
-    color:white;
-
-    border:none;
-
-    border-radius:999px;
-
-    padding:16px 42px;
-
-    font-size:18px;
-
-    font-weight:600;
-
+.envelope-container{
+    width:min(92vw,560px);
     cursor:pointer;
-
-    transition:.3s;
-
+    transition:transform .35s ease;
 }
 
-.welcome-button:hover{
+.envelope-container:hover{
+    transform:translateY(-8px) scale(1.02);
+}
 
-    background:#7ab5e9;
+.envelope{
+    width:100%;
+    display:block;
+    filter:drop-shadow(0 30px 60px rgba(35,67,95,.20));
+    animation:envelopeFloat 4s ease-in-out infinite;
+}
 
-    transform:translateY(-2px);
+.tap-text{
+    margin-top:24px;
+    text-align:center;
+    font-size:15px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#7aaed8;
+    animation:pulse 2s infinite;
+}
 
+@keyframes envelopeFloat{
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+@keyframes pulse{
+    0%{
+        opacity:.45;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.45;
+    }
 }
 
 .welcome-gate.hide{
@@ -1402,5 +1362,7 @@ main{
     visibility:hidden;
 
     pointer-events:none;
+
+    transform:scale(1.03);
 
 }
