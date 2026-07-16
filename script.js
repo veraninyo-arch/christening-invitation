@@ -132,3 +132,29 @@ function updateCountdown() {
 updateCountdown();
 
 setInterval(updateCountdown, 1000);
+
+/* ==========================
+   WELCOME GATE
+========================== */
+
+const welcomeGate = document.getElementById("welcomeGate");
+const envelope = document.getElementById("envelope");
+
+if (welcomeGate && envelope) {
+
+    // Skip welcome gate if already opened before
+    if (localStorage.getItem("invitationOpened") === "true") {
+
+        welcomeGate.classList.add("hide");
+
+    }
+
+    envelope.addEventListener("click", () => {
+
+        localStorage.setItem("invitationOpened", "true");
+
+        welcomeGate.classList.add("hide");
+
+    });
+
+}
